@@ -15,7 +15,7 @@ const app = new App({
 
 const appServer = async () => {
   await app.start(process.env.PORT || PORT);
-  console.log(colors.cyan(`Slack  app is running at port ${PORT}`));
+  console.log(colors.cyan(`Slack app is running at port ${PORT}`));
 };
 
 appServer();
