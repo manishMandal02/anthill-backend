@@ -1,6 +1,8 @@
 import colors from 'colors/safe';
 import dotenv from 'dotenv';
 import { App } from '@slack/bolt';
+import { publishMessage } from './services/postMessage';
+import { messageAction } from './services/messageAction';
 
 dotenv.config();
 
@@ -16,6 +18,8 @@ const app = new App({
 const appServer = async () => {
   await app.start(process.env.PORT || PORT);
   console.log(colors.cyan(`Slack app is running at port ${PORT}`));
+  await publishMessage(app, 'C03J8FKGQ5C', 'Hello world :tada:');
+  await messageAction(app);
 };
 
 appServer();
