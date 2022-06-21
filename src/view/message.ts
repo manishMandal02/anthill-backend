@@ -29,7 +29,7 @@ const messageView = (users: string[]): KnownBlock[] => {
       elements: [
         {
           type: 'mrkdwn',
-          text: `<@${users.map((user) => '<@user>')}>`,
+          text: `${users.map((user) => '<@user>')}`,
         },
       ],
     },
