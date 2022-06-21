@@ -6,6 +6,8 @@ const messageAction = async (app: App) => {
   try {
     app.action('join_btn', async ({ body, ack, say }) => {
       // Acknowledge the action
+      console.log(body);
+      console.log('msg received');
       await ack();
       await say(`<@${body.user.id}> clicked the button`);
     });

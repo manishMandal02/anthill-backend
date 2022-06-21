@@ -1,5 +1,6 @@
 import colors from 'colors/safe';
 import dotenv from 'dotenv';
+import express, { Express, Request, Response } from 'express';
 import { App } from '@slack/bolt';
 import { publishMessage } from './services/postMessage';
 import { messageAction } from './services/messageAction';
@@ -8,6 +9,8 @@ dotenv.config();
 
 // default port
 const PORT = 8000;
+
+const expressApp: Express = express();
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -22,4 +25,14 @@ const appServer = async () => {
   await messageAction(app);
 };
 
+expressApp.get('/', (req: Request, res: Response) => {
+  res.send('Server running...');
+});
+
+expressApp.listen(8080, () => {
+  console.log(colors.cyan(`Server app is running at port ${8080}`));
+});
+
 appServer();
+
+// Todo: Create express server and listen to the slack events (message action)
