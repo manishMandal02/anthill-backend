@@ -9,7 +9,7 @@ const publishMessage = async (app: App, id: string, text: string) => {
       token: process.env.SLACK_BOT_TOKEN,
       channel: id,
       text: text,
-      blocks: messageView(),
+      blocks: messageView(['U03JC6E9U7P', 'U03JC6E9U7P']),
       // You could also use a blocks[] array to send richer content
     });
 

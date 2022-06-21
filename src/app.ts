@@ -30,7 +30,7 @@ expressApp.get('/', (req: Request, res: Response) => {
 });
 
 expressApp.listen(8080, () => {
-  console.log(colors.cyan(`Server app is running at port ${8080}`));
+  console.log(colors.cyan(`Server app is running at port ${PORT}`));
 });
 
 appServer();

@@ -13,7 +13,7 @@ const messageAction = async (app: App) => {
       await ack();
       //   await say(`<@${body.user.id}> clicked the button`);
       await respond({
-        blocks: messageView(),
+        blocks: messageView(['U03JC6E9U7P', 'U03JC6E9U7P', 'U03JC6E9U7P']),
       });
     });
 

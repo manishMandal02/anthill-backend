@@ -1,6 +1,6 @@
 import { KnownBlock } from '@slack/bolt';
 
-const messageView = (): KnownBlock[] => {
+const messageView = (users: string[]): KnownBlock[] => {
   const blocks: KnownBlock[] = [
     {
       type: 'context',
@@ -29,7 +29,7 @@ const messageView = (): KnownBlock[] => {
       elements: [
         {
           type: 'mrkdwn',
-          text: '<@U03JC6E9U7P>, <@U03JC6E9U7P>, <@U03JC6E9U7P>',
+          text: `<@${users.map((user) => '<@user>')}>`,
         },
       ],
     },
